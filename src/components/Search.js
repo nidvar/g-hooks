@@ -46,6 +46,10 @@ const Search = ()=>{
         )
     })
 
+    document.body.addEventListener('click',()=>{
+        console.log('PIKACHU !!!')
+    })
+
     return(
         <div>
             <label>Enter Search: </label>

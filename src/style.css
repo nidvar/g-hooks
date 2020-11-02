@@ -1,5 +1,29 @@
+body{
+    margin:0;
+    padding:0;
+}
+
 .dropdown_box{
-    border:1px solid black;
     padding:10px;
-    margin:5px;
+}
+
+.selected{
+    background-color: whitesmoke;
+}
+
+.dropdown{
+    border:1px solid black;
+    border-radius:4px;
+}
+
+.unselected{
+    background-color:orange;
+}
+
+.open{
+    background-color:skyblue;
+    padding:20px;
+}
+
+.closed{
 }

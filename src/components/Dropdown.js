@@ -49,9 +49,9 @@ const Dropdown = (props)=>{
                     }}>
 
                     {props.selected_option.label}
-                    {/* {dropdown_state=='open'?display_options:null} */}
-                    <div className={`${dropdown_state=='open'?'open':'closed'}`}>{display_options}</div>
+                    
                 </div>
+                {dropdown_state=='open'?display_options:null}
             </div>
         </div>
     )

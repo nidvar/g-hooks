@@ -22,8 +22,6 @@ const options = [
 
 function App() {
   const [selected_option, update_selection] = useState(options[0]);
-  
-  console.log(selected_option)
   return (
     <div className="App">
       <Dropdown options={options} selected_option={selected_option} update_selection = {update_selection} />

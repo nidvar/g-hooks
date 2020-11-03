@@ -2,13 +2,6 @@ import React, {useState, useEffect} from 'react';
 
 const Dropdown = (props)=>{
     const [dropdown_state, toggle_dropdown_state] = useState('closed')
-
-    useEffect(()=>{
-        document.body.addEventListener('click',()=>{
-            toggle_dropdown_state('closed'); console.log('body clicked')
-        },{capture:true})
-    },[])
-
     const display_options = props.options.map(a=>{
         if(a.label === props.selected_option.label){
             return 
@@ -20,7 +13,7 @@ const Dropdown = (props)=>{
                 className='dropdown_box unselected' 
                 onClick={()=>{   
                     props.update_selection(a);
-                    console.log('label clicked')
+                    toggle_dropdown_state('closed');
                 }}
             >
                 {a.label}
@@ -32,24 +25,28 @@ const Dropdown = (props)=>{
     const toggle=()=>{
         if(dropdown_state === 'open'){
             toggle_dropdown_state('closed')
+            console.log('toggle closed')
         }else if(dropdown_state === 'closed'){
             toggle_dropdown_state('open')
+            console.log('toggle open')
         }
     }
 
+    useEffect(()=>{
+        document.body.addEventListener('click',(e)=>{
+            const x = document.querySelector('body')
+            if(e.target == x){
+                toggle_dropdown_state('closed')
+            }
+        },{capture:true})
+    },[])
+
     return(
-        <div>
+        <div className='overseer'>
             <label>Select an option</label>
             <div className='dropdown'>
-                <div 
-                    className='dropdown_box selected' 
-                    onClick={()=>{
-                        toggle();
-                        console.log('dropdown clicked')
-                    }}>
-
+                <div className='dropdown_box selected' onClick={ ()=>{toggle()} }>
                     {props.selected_option.label}
-                    
                 </div>
                 {dropdown_state=='open'?display_options:null}
             </div>

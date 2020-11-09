@@ -4,6 +4,7 @@ import styles from './style.css';
 import Accordion from './components/Accordion';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 
 const items = [
   {title:'Pikachu',type:'Electric'},
@@ -24,7 +25,9 @@ function App() {
   const [selected_option, update_selection] = useState(options[0]);
   return (
     <div className="App">
-      <Dropdown options={options} selected_option={selected_option} update_selection = {update_selection} />
+      {/* <Dropdown options={options} selected_option={selected_option} update_selection = {update_selection} /> */}
+
+      <Translate />
     </div>
   );
 }

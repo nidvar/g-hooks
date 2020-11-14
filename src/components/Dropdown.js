@@ -4,7 +4,7 @@ const Dropdown = (props)=>{
     const [dropdown_state, toggle_dropdown_state] = useState('closed')
     const display_options = props.options.map(a=>{
         if(a.label === props.selected_option.label){
-            return 
+            return null
         }
 
         return(
@@ -43,7 +43,7 @@ const Dropdown = (props)=>{
 
     return(
         <div className='overseer'>
-            <label>Select an option</label>
+            <label>{props.label}</label>
             <div className='dropdown'>
                 <div className='dropdown_box selected' onClick={ ()=>{toggle()} }>
                     {props.selected_option.label}

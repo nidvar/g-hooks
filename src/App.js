@@ -5,7 +5,8 @@ import Accordion from './components/Accordion';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
-import Route from './components/Route'
+import Route from './components/Route';
+import Header from './components/Header';
 
 const items = [
   {title:'Pikachu',type:'Electric'},
@@ -26,6 +27,7 @@ function App() {
   const [selected_option, update_selection] = useState(options[0]);
   return (
     <div className="App">
+      <Header />
       <Route path='/search'>
         <Search />
       </Route>
@@ -38,7 +40,7 @@ function App() {
         <Translate />
       </Route>
 
-      <Route path='/'>
+      <Route path='/accordion'>
         <Accordion items={items}/>
       </Route>
     </div>

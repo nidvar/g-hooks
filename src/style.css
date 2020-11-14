@@ -3,6 +3,15 @@ body{
     padding:0;
 }
 
+.Header{
+    margin:10px;
+    padding:10px;
+}
+
+a{
+    margin:10px 10px 10px 0px;
+}
+
 .dropdown_box{
     padding:10px;
 }
